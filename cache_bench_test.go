@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package caffeine
+package ristretto
 
 import (
 	"errors"

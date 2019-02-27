@@ -1,4 +1,4 @@
-# caffeine
+# ristretto
 Benchmark for existing high performance caches
 
 # How to Run
