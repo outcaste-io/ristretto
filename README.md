@@ -1,8 +1,7 @@
 # ristretto
-Benchmark for existing high performance caches
 
 # How to Run
-To run the benchmarks, run the following command -
+To run the benchmarks for existing caches, run the following command -
 ```
 go test -bench=. -cpu=N
 ```
