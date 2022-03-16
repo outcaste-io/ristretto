@@ -104,7 +104,7 @@ func newBufferFile(file *os.File, capacity int) (*Buffer, error) {
 		capacity = defaultCapacity
 	}
 	mmapFile, err := OpenMmapFileUsing(file, capacity, true)
-	if err != nil && err != NewFile {
+	if err != nil && errors.Is(err, NewFile) {
 		return nil, err
 	}
 	buf := &Buffer{
