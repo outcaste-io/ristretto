@@ -9,8 +9,6 @@ Ristretto is a fast, concurrent cache library built with a focus on performance 
 The motivation to build Ristretto comes from the need for a contention-free
 cache.
 
-**Use [outcaste-io/issues][issues] repository to file issues for Ristretto.**
-
 [issues]: https://github.com/outcaste-io/issues
 
 ## Features
