@@ -8,9 +8,9 @@
 package z
 
 /*
-#cgo LDFLAGS: /usr/share/outserv/lib/libjemalloc.a -L/usr/share/outserv/lib -Wl,-rpath,/usr/share/outserv/lib -ljemalloc -lm -lstdc++ -pthread -ldl
+#cgo LDFLAGS: /usr/local/lib/libjemalloc_outcaste.a -L/usr/local/lib -Wl,-rpath,/usr/local/lib -ljemalloc -lm -lstdc++ -pthread -ldl
 #include <stdlib.h>
-#include <jemalloc/jemalloc.h>
+#include <jemalloc/jemalloc_outcaste.h>
 */
 import "C"
 import (

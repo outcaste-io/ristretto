@@ -22,6 +22,22 @@ cache.
 * **Metrics** - optional performance metrics for throughput, hit ratios, and other stats.
 * **Simple API** - just figure out your ideal `Config` values and you're off and running.
 
+## Note on jemalloc
+
+We have been using jemalloc v5.2.1.
+To use jemalloc, please configure jemalloc with these flags:
+
+```
+./configure --with-install-suffix='_outcaste' --with-jemalloc-prefix='je_' --with-malloc-conf='background_thread:true,metadata_thp:auto'; \
+make
+make install_lib install_include # Use sudo if needed in this step.
+```
+
+outserv/outserv Makefile has these build steps already present. You can run
+`make jemalloc` to install it. This jemalloc would not interfere with any other
+jemalloc installation that might already be present on the system.
+
+
 ## Status
 
 Ristretto is production-ready. See [Projects using Ristretto](#projects-using-ristretto).
