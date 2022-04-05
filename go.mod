@@ -10,5 +10,6 @@ require (
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.7.0
+	go.uber.org/atomic v1.9.0 // indirect
 	golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f
 )
