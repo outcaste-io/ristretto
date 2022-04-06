@@ -4,6 +4,13 @@
 [![Coverage](https://gocover.io/_badge/github.com/outcaste-io/ristretto)](https://gocover.io/github.com/outcaste-io/ristretto)
 ![Tests](https://github.com/outcaste-io/ristretto/workflows/tests/badge.svg)
 
+**This is a fork of dgraph-io/ristretto, maintained by the original authors of the project and volunteers.**
+
+Core Maintainers:
+
+- https://github.com/manishrjain
+- https://github.com/karlmcguire
+
 Ristretto is a fast, concurrent cache library built with a focus on performance and correctness.
 
 The motivation to build Ristretto comes from the need for a contention-free
