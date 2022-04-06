@@ -6,10 +6,11 @@
 
 **This is a fork of dgraph-io/ristretto, maintained by the original authors of the project and volunteers.**
 
-Core Maintainers:
+Core Maintainers (sorted alphabetically):
 
-- https://github.com/manishrjain
+- https://github.com/ahsanbarkati
 - https://github.com/karlmcguire
+- https://github.com/manishrjain
 
 Ristretto is a fast, concurrent cache library built with a focus on performance and correctness.
 
