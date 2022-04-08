@@ -11,6 +11,7 @@ Core Maintainers (sorted alphabetically):
 - https://github.com/ahsanbarkati
 - https://github.com/karlmcguire
 - https://github.com/manishrjain
+- https://github.com/namanjain8
 
 Ristretto is a fast, concurrent cache library built with a focus on performance and correctness.
 
