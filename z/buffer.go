@@ -24,7 +24,6 @@ import (
 	"sort"
 	"sync/atomic"
 
-	"github.com/golang/glog"
 	"github.com/pkg/errors"
 )
 
@@ -346,12 +345,12 @@ func (s *sortHelper) sortSmall(start, end int) {
 
 func assert(b bool) {
 	if !b {
-		glog.Fatalf("%+v", errors.Errorf("Assertion failure"))
+		fatalf("%+v", errors.Errorf("Assertion failure"))
 	}
 }
 func check(err error) {
 	if err != nil {
-		glog.Fatalf("%+v", err)
+		fatalf("%+v", err)
 	}
 }
 func check2(_ interface{}, err error) {
