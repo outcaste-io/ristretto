@@ -18,6 +18,8 @@ package z
 
 import (
 	"context"
+	"fmt"
+	"os"
 	"sync"
 
 	"github.com/cespare/xxhash/v2"
@@ -148,4 +150,14 @@ func ZeroOut(dst []byte, start, end int) {
 	// for i := range b {
 	// 	b[i] = 0x0
 	// }
+}
+
+func fatal(args ...interface{}) {
+	defer os.Exit(1)
+	panic(fmt.Sprint(args...))
+}
+
+func fatalf(format string, args ...interface{}) {
+	defer os.Exit(1)
+	panic(fmt.Sprintf(format, args...))
 }
