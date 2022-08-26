@@ -5,7 +5,7 @@ package main
 import (
 	"os"
 
-	"github.com/outcaste-io/ristretto/z"
+	"github.com/dgraph-io/ristretto/z"
 )
 
 func Calloc(size int) []byte { return z.Calloc(size, "memtest") }

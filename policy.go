@@ -21,7 +21,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/outcaste-io/ristretto/z"
+	"github.com/dgraph-io/ristretto/z"
 )
 
 const (

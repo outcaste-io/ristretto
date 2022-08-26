@@ -1,4 +1,4 @@
-module github.com/outcaste-io/ristretto
+module github.com/dgraph-io/ristretto
 
 go 1.12
 

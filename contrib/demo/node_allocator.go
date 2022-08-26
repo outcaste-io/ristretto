@@ -5,12 +5,12 @@ package main
 import (
 	"unsafe"
 
-	"github.com/outcaste-io/ristretto/z"
+	"github.com/dgraph-io/ristretto/z"
 )
 
 // Defined in node.go.
 func init() {
-	alloc = z.NewAllocator(10 << 20, "demo")
+	alloc = z.NewAllocator(10<<20, "demo")
 }
 
 func newNode(val int) *node {

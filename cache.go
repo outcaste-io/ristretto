@@ -25,7 +25,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/outcaste-io/ristretto/z"
+	"github.com/dgraph-io/ristretto/z"
 	"go.uber.org/atomic"
 )
 
