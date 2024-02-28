@@ -19,7 +19,6 @@ package z
 import (
 	"bytes"
 	"fmt"
-	"math"
 	"math/bits"
 	"math/rand"
 	"strings"
@@ -49,7 +48,6 @@ type Allocator struct {
 var allocsMu *sync.Mutex
 var allocRef uint64
 var allocs map[uint64]*Allocator
-var calculatedLog2 []int
 
 func init() {
 	allocsMu = new(sync.Mutex)
@@ -58,11 +56,6 @@ func init() {
 	// Set up a unique Ref per process.
 	rand.Seed(time.Now().UnixNano())
 	allocRef = uint64(rand.Int63n(1<<16)) << 48
-
-	calculatedLog2 = make([]int, 1025)
-	for i := 1; i <= 1024; i++ {
-		calculatedLog2[i] = int(math.Log2(float64(i)))
-	}
 }
 
 // NewAllocator creates an allocator starting with the given size.
@@ -78,8 +71,9 @@ func NewAllocator(sz int, tag string) *Allocator {
 		buffers: make([][]byte, 64),
 		Tag:     tag,
 	}
-	l2 := uint64(log2(sz))
-	if bits.OnesCount64(uint64(sz)) > 1 {
+	szu := uint(sz)
+	l2 := uint64(log2(szu))
+	if bits.OnesCount(szu) > 1 {
 		l2 += 1
 	}
 	a.buffers[0] = Calloc(1<<l2, a.Tag)
@@ -157,17 +151,8 @@ func (a *Allocator) Size() int {
 	panic("Size should not reach here")
 }
 
-func log2(sz int) int {
-	if sz < len(calculatedLog2) {
-		return calculatedLog2[sz]
-	}
-	pow := 10
-	sz >>= 10
-	for sz > 1 {
-		sz >>= 1
-		pow++
-	}
-	return pow
+func log2(sz uint) int {
+	return bits.Len(sz) - 1
 }
 
 func (a *Allocator) Allocated() uint64 {
